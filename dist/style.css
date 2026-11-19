@@ -1,0 +1,31 @@
+:root { color-scheme: dark; font-family: "DM Sans", system-ui, sans-serif; color: #f7f1e8; background: #1b191c; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header, main { width: min(92%, 59rem); margin: auto; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 1.3rem 0; border-bottom: 1px solid #454047; }
+.brand { font: bold 1.65rem Georgia, serif; }
+.brand span { color: #ff875c; }
+header > span, #count { color: #c8bfc2; font-size: .9rem; }
+.ticket { background: #ff996b; color: #271a20; display: flex; margin: 2.75rem 0; border-radius: .65rem; position: relative; overflow: hidden; }
+.ticket-body { flex: 1; padding: clamp(1.4rem, 5vw, 3.5rem); }
+h1, h2 { font-family: "DM Serif Text", Georgia, serif; margin: 0; }
+h1 { font-size: clamp(2.8rem, 7vw, 5.7rem); letter-spacing: -.06em; line-height: 1; }
+h1 span { color: #943e30; }
+.ticket p { max-width: 23rem; line-height: 1.55; margin-bottom: 0; }
+.stub { width: 18%; border-left: 2px dashed #884f40; display: grid; place-content: center; justify-items: center; gap: .8rem; font: .85rem monospace; letter-spacing: .12em; }
+.barcode { width: 5rem; height: 3rem; background: repeating-linear-gradient(90deg,#281b20 0 2px,transparent 2px 4px,#281b20 4px 8px,transparent 8px 11px,#281b20 11px 12px,transparent 12px 15px); }
+label, button { font-weight: 650; }
+.entry { display: flex; gap: .65rem; margin: .65rem 0 2.5rem; }
+input, button { font: inherit; border-radius: .45rem; padding: .85rem 1rem; }
+#title { flex: 1; min-width: 0; border: 1px solid #6d656b; background: #28252a; color: inherit; }
+button { border: 0; background: #ff996b; color: #281b20; font-weight: bold; cursor: pointer; }
+:focus-visible { outline: 3px solid #fada86; outline-offset: 3px; }
+.list-head { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #59515a; padding-bottom: .8rem; }
+h2 { font-size: 2rem; }
+ul { list-style: none; padding: 0; margin: 0; }
+li label { display: flex; align-items: center; gap: 1rem; cursor: pointer; padding: 1rem .25rem; border-bottom: 1px solid #443e45; overflow-wrap: anywhere; }
+li input { accent-color: #ff996b; width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+li input:checked + span { color: #c0b6bd; text-decoration: line-through; }
+#empty { text-align: center; padding: 2rem 1rem; color: #c8bfc2; }
+#notice { color: #ffbf98; }
+@media(max-width: 35rem) { .stub { width: 20%; } .stub b { writing-mode: vertical-rl; } .barcode,.stub span { display: none; } header > span { font-size: .8rem; } }
