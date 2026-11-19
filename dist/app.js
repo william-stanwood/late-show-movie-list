@@ -44,7 +44,19 @@ function showMovie(movie) {
   const title = document.createElement("span");
   title.textContent = movie.title;
   label.append(checkbox, title);
-  row.append(label);
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.textContent = "Remove";
+  removeButton.setAttribute("aria-label", "Remove " + movie.title);
+  removeButton.addEventListener("click", () => {
+    const adjacentRow = row.nextElementSibling || row.previousElementSibling;
+    movies = movies.filter(entry => entry !== movie);
+    row.remove();
+    saveMovies();
+    updateSummary();
+    (adjacentRow?.querySelector("button") || titleInput).focus();
+  });
+  row.append(label, removeButton);
   list.append(row);
 }
 
